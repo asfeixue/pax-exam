@@ -1,0 +1,2 @@
+Export-Package: com.peergreen.example.paxexam.hello.api
+Private-Package: com.peergreen.example.paxexam.hello.impl
