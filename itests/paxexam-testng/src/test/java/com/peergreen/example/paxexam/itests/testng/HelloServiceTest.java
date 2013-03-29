@@ -48,52 +48,51 @@ import com.peergreen.example.paxexam.hello.api.Hello;
 @ExamReactorStrategy(PerClass.class)
 public class HelloServiceTest {
 
-	@Inject
-	BundleContext context;
+    @Inject
+    BundleContext context;
 
-	@Inject
-	private Hello helloService;
+    @Inject
+    private Hello helloService;
 
-	@Configuration
-	public Option[] config() {
+    @Configuration
+    public Option[] config() {
 
-		// Reduce log level.
-		Logger root = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
-		root.setLevel(Level.INFO);
+        // Reduce log level.
+        Logger root = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
+        root.setLevel(Level.INFO);
 
-		return options(
-				systemProperty("org.ops4j.pax.logging.DefaultServiceLog.level").value("WARN"),
-				mavenBundle("org.testng", "testng", "6.3.1"),
-				mavenBundle("com.peergreen.example.paxexam", "paxexam-hello-service").version("1.0.0-SNAPSHOT"));
-	}
+        return options(systemProperty("org.ops4j.pax.logging.DefaultServiceLog.level").value("WARN"),
+                mavenBundle("org.testng", "testng", "6.3.1"),
+                mavenBundle("com.peergreen.example.paxexam", "paxexam-hello-service").version("1.0.0-SNAPSHOT"));
+    }
 
-	@Test
-	public void checkInject() {
-		assertNotNull(context);
-		assertNotNull(helloService);
-	}
+    @Test
+    public void checkInject() {
+        assertNotNull(context);
+        assertNotNull(helloService);
+    }
 
-	@Test
-	public void checkHelloBundle() {
-		Boolean found=false;
-		Boolean active=false;
-		Bundle[] bundles = context.getBundles();
+    @Test
+    public void checkHelloBundle() {
+        Boolean found = false;
+        Boolean active = false;
+        Bundle[] bundles = context.getBundles();
         for (Bundle bundle : bundles) {
-        	if (bundle != null) {
-        		if (bundle.getSymbolicName().equals("com.peergreen.example.paxexam.hello-service")) {
-        			found=true;
-        			if(bundle.getState() == Bundle.ACTIVE) {
-        				active = true;
-        			}
-        		}
-        	}
-		}
+            if (bundle != null) {
+                if (bundle.getSymbolicName().equals("com.peergreen.example.paxexam.hello-service")) {
+                    found = true;
+                    if (bundle.getState() == Bundle.ACTIVE) {
+                        active = true;
+                    }
+                }
+            }
+        }
         assertTrue(found);
-        assertTrue(active);	
-	}
-	
-	@Test
-	public void getHelloService() {
-		assertEquals(helloService.sayHello("test"), "hello test");
-	}
+        assertTrue(active);
+    }
+
+    @Test
+    public void getHelloService() {
+        assertEquals(helloService.sayHello("test"), "hello test");
+    }
 }

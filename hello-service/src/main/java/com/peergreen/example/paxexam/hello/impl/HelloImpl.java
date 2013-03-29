@@ -31,19 +31,19 @@ import com.peergreen.example.paxexam.hello.api.Hello;
 @Instantiate
 public class HelloImpl implements Hello {
 
-	@Validate
-	public void start() {
-		System.out.println("Start component");
+    @Validate
+    public void start() {
+        System.out.println("Start component");
 
-	}
+    }
 
-	@Invalidate
-	public void stop() {
-		System.out.println("Stop component");
+    @Invalidate
+    public void stop() {
+        System.out.println("Stop component");
 
-	}
+    }
 
-	public String sayHello(String name) {
-		return "hello " + name;
-	}
+    public String sayHello(String name) {
+        return "hello " + name;
+    }
 }
