@@ -41,9 +41,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.peergreen.platform</groupId>
-      <artifactId>platform-light</artifactId>
-      <version>${peergreen-platform.version}</version>
+      <groupId>com.peergreen.community</groupId>
+      <artifactId>peergreen-server-light</artifactId>
+      <version>${peergreen-server.version}</version>
       <scope>test</scope>
     </dependency>
     
