@@ -42,7 +42,7 @@
 
     <dependency>
       <groupId>com.peergreen.community</groupId>
-      <artifactId>peergreen-server-light</artifactId>
+      <artifactId>peergreen-kernel</artifactId>
       <version>${peergreen-server.version}</version>
       <scope>test</scope>
     </dependency>
