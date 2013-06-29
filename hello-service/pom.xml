@@ -30,7 +30,7 @@
     <osgi.core.version>5.0.0</osgi.core.version>
     <ipojo.version>1.8.6</ipojo.version>
     <maven-bundle-plugin.version>2.3.7</maven-bundle-plugin.version>
-    <maven-bundle-ipojo-plugin.version>1.8.6</maven-bundle-ipojo-plugin.version>
+    <maven-bundle-ipojo-plugin.version>1.10.1</maven-bundle-ipojo-plugin.version>
   </properties>
 
   <dependencies>
